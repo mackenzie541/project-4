@@ -12,6 +12,10 @@ let controller = function() {
       $(".comments").append($new_comment);
       //$new_comment.fadeIn();
       $(".comment-input input").val("");
+
+
+      // lof the list of paragraph elements
+      console.log($(".comments").html());
     }
   };
 

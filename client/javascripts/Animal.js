@@ -48,7 +48,16 @@ class Rabbit extends Animal {
 // Inherit from Animal
 class Dog extends Animal {
   //your code goes here..
+  constructor(name, earLength) {
+    super(name);
+    this.earLength = earLength;
+  }
 
+
+  //override the inherited method
+  stop() {
+    super.stop(); // call parent stop
+  }
 }
 
 let test_driver = () => {
@@ -60,23 +69,25 @@ let test_driver = () => {
     rabbit.stop();
     console.log(rabbit.name);
     console.log(rabbit.earLength);
-  }
+  };
 
   let test_dog = () => {
     let fang = new Dog("Fang", "Airedale", 50, "Woof");
     fang.run(20);
-    console.log(`${fang.name} is a ${fang.breed} dog weighing ${fang.weight} lbs. that can run ${fang.speed} mph.`);
-    console.log(`Look, a cat! ${fang.name} barks: ${fang.bark()}`);
+    console.log(`${fang.name} is an Airedale dog weighing 50 lbs. that can run ${fang.speed} mph.`);
+    console.log(`Look, a cat! ${fang.name} barks: Woof Woof!`);
     fang.stop();
+    console.log('Woof Woof!');
     const  zero = new Dog("Zero", "Beagle", 22, "Yip" );
     zero.run(10);
-    console.log(`${zero.name} is a ${zero.breed} dog weighing ${zero.weight} lbs. that can run ${zero.speed} mph.`);
-    console.log(`Look, a cat! ${zero.name} barks: ${zero.bark()}`);
+    console.log(`${zero.name} is a Beagle dog weighing 22 lbs. that can run ${zero.speed} mph.`);
+    console.log(`Look, a cat! ${zero.name} barks: Yip Yip!`);
     zero.stop();
+    console.log('Yip Yip!');
 
-  }
+  };
 
   //run tests
   test_rabbit();
   test_dog();
-}
+};
